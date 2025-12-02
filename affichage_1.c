@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<time.h>
 
-void menu(){
+int menu(){
 	int choix;
 	do {
 		printf("\n");
@@ -32,14 +32,21 @@ void menu(){
 
 void regle_jeu() {
     printf("Ce jeu est de type match 4.\n"
-           "L'objectif est de réaliser des figures afin de faire disparaitre des élèments. Pour cela, \n"
-           "carotte\n");
+           "L'objectif est de réaliser des figures afin de faire disparaitre des élèments.\n"
+		   "Pour cela, vous pouvez interchanger deux élèments en utilisants les fléches directionelles et entrées pour valider. \n" //les touches ne sont pas fixes
+           "Les figures à réaliser sont les suivantes :\n"
+		   "la croix, avec des branches de deux élèments, qui fait disparaitre tout les élèments de ce type sur la ligne et la colonne concernèes. ;\n"
+		   "le carrré, de coté 4, fait disparaitre tout les élèments du type utilisé à l'intérieur de lui même;\n"
+		   "la ligne de 6 élèments qui fait disparaitre tout les élèments utilisés pour la constituer, même ceux isolés;\n"
+		   "la ligne de 4 élèments qui fait disparaitre tout les élèments utilisés pour la constituer.\n"
+		   "\n"
+		   "Il y a trois niveau, chacun de difficulté croissante.\n"
+		   "Pour les réliser, vous disposez de d'un nombre de coup et d'un temps limité.\n"
+		   "Si vous échouez, vous perdez une vie. Vous disposez de trois vies et si vous les perdez toutes vous recommencez à zéro.\n"
+		   "Vous pouvez sauvegarder à tout moment votre progression.\n");
 }
 
 int main (){
 	menu();
 	return 0;
 }
-
-
-

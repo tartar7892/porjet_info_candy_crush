@@ -38,11 +38,8 @@ void regle_jeu() {
 
 int main (){
 	menu();
-}
-
-int main (){
-	menu();
 	return 0;
 }
+
 
 

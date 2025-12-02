@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<time.h>
 
-int menu(){
+void menu(){
 	int choix;
 	do {
 		printf("\n");
@@ -44,4 +44,5 @@ int main (){
 	menu();
 	return 0;
 }
+
 

@@ -2,32 +2,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-void chrono(){
-	int minutes = 3;
-	int secondes = 0;
-	clock_t debut;
-	
-	while(minutes > 0 || secondes > 0){  
-		printf("\r%02d:%02d", minutes, secondes);
-		fflush(stdout); // affiche immédiatement 
-		
-		debut = clock();
-		while(clock() - debut < CLOCKS_PER_SEC);
-		
-		if(secondes == 0){
-			minutes--;
-			secondes = 59;
-		} else {
-			secondes--;
-		}
-	}
-	
-	printf("\r00:00\n"); //affiche le chrono
-	printf("Temps ecoule\n"); //affiche Temps écoulé 
-}	
-	
-int main(){
-	chrono();	
-	return 0;
+void chrono(int *minutes, int *secondes) {
+    static clock_t heure_depart = 0;
+ 
+    if (heure_depart == 0) {
+        heure_depart = clock();
+    }
+    
+    if (clock() - heure_depart >= CLOCKS_PER_SEC) {
+        heure_depart = clock();
+        
+        if (*secondes == 0) {
+            if (*minutes > 0) {
+                (*minutes)--;
+                *secondes = 59;
+            }
+        } else {
+            (*secondes)--;
+        }
+        
+        printf("\r%02d:%02d", *minutes, *secondes);
+        fflush(stdout);
+    }
+    
+    if (*minutes == 0 && *secondes == 0) {
+        printf("\r00:00\n");
+        printf("Temps ecoule\n");
+    }
 }

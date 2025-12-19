@@ -3,14 +3,19 @@
 #include"carre_bas_droite_destruc.c"
 #include"carre_bas_gauche_destruc.c"
 
-bool carree(int position_x, int position_y, int taille_ligne, int taille_colonne, int grille[taille_ligne][taille_colonne]){
+#include"ligne_bas.c"
+#include"ligne_haut.c"
+#include"ligne_gauche.c"
+#include"ligne_droite.c"
+
+bool carre(int position_x, int position_y){
 	if(position_x+3<taille_ligne &&
 	ligne_haut(position_x+3, position_y, 4) && 
 	ligne_haut(position_x, position_y, 4) &&
 	ligne_droite(position_x, position_y+3, 4) &&
 	ligne_droite(position_x, position_y, 4))
 	{
-		carre_haut_droite_destruc();
+		carre_haut_droite_destruc(position_x, position_y);
 		return 1;
 	}// carre droite haut
 	
@@ -20,7 +25,7 @@ bool carree(int position_x, int position_y, int taille_ligne, int taille_colonne
 	ligne_droite(position_x, position_y+3, 4) &&
 	ligne_droite(position_x, position_y, 4))
 	{
-		carre_bas_droite_destruc();
+		carre_bas_droite_destruc(position_x, position_y);
 		return 1;
 	}//carre droite bas
 	
@@ -30,7 +35,7 @@ bool carree(int position_x, int position_y, int taille_ligne, int taille_colonne
 	ligne_gauche(position_x, position_y-3, 4) &&
 	ligne_gauche(position_x, position_y, 4))
 	{
-		carre_haut_gauche_destruc();
+		carre_haut_gauche_destruc(position_x, position_y);
 		return 1;
 	}//carre haut gauche 
 	
@@ -40,7 +45,7 @@ bool carree(int position_x, int position_y, int taille_ligne, int taille_colonne
 	ligne_gauche(position_x, position_y-3, 4) &&
 	ligne_gauche(position_x, position_y, 4))
 	{
-		carre_bas_gauche_destruc();
+		carre_bas_gauche_destruc(position_x, position_y);
 		return 1;
 	}//carre bas gauche
 }

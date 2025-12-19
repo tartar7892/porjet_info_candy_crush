@@ -1,9 +1,9 @@
 bool ligne_bas(int position_x, int position_y, int longueur){
-	if(position_y-longueur < 0){
+	if(position_x+longueur > taille_ligne){
 		return 0;
 	}
 	for(int i=1; i<longueur; i++){
-		if(grille[position_x][position_y-i] != grille[position_x][position_y]){
+		if(grille[position_x+i][position_y] != grille[position_x][position_y]){
 			return 0;
 		}
 	}

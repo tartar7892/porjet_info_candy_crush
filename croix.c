@@ -9,6 +9,7 @@ bool croix(int position_x, int position_y){
 	ligne_droite(position_x, position_y, 4) &&
 	ligne_gauche(position_x, position_y, 4))
 	{
+		destruction_croix();
 		return 1;
 	}
 	return 0;

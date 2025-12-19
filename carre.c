@@ -1,12 +1,4 @@
-#include"carre_haut_droite_destruc.c"
-#include"carre_haut_gauche_destruc.c"
-#include"carre_bas_droite_destruc.c"
-#include"carre_bas_gauche_destruc.c"
-
-#include"ligne_bas.c"
-#include"ligne_haut.c"
-#include"ligne_gauche.c"
-#include"ligne_droite.c"
+#include"header.h"
 
 bool carre(int position_x, int position_y){
 	if(position_x+3<taille_ligne &&

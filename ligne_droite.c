@@ -1,3 +1,5 @@
+#include"header.h"
+
 bool ligne_droite(int position_x, int position_y, int longueur){
 	if(position_y+longueur > taille_colonne){
 		return 0;

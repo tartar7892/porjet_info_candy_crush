@@ -1,3 +1,5 @@
+#include"header.h"
+
 void carre_bas_gauche(int position_x, int position_y){
 	for(int i=0; i<4; i++){
 		for(int i=0; i<4; i++){

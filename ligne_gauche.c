@@ -1,3 +1,5 @@
+#include"header.h"
+
 bool ligne_gauche(int position_x, int position_y, int longueur){
 	if(position_y-longueur < 0){
 		return 0;

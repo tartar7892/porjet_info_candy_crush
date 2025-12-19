@@ -1,3 +1,5 @@
+#include"header.h"
+
 bool ligne_bas(int position_x, int position_y, int longueur){
 	if(position_x+longueur > taille_ligne){
 		return 0;

@@ -1,4 +1,4 @@
-bool ligne_gauche(int position_x, int position_y, int longueur){
+bool ligne_gauche(int position_x, int position_y, int longueur, int taille_ligne, int taille_colonne, int grille[taille_ligne][taille_colonne]){
 	if(position_y-longueur < 0){
 		return 0;
 	}

@@ -3,7 +3,7 @@
 #include"carre_bas_droite_destruc.c"
 #include"carre_bas_gauche_destruc.c"
 
-bool carree(int position_x, int position_y){
+bool carree(int position_x, int position_y, int taille_ligne, int taille_colonne, int grille[taille_ligne][taille_colonne]){
 	if(position_x+3<taille_ligne &&
 	ligne_haut(position_x+3, position_y, 4) && 
 	ligne_haut(position_x, position_y, 4) &&

@@ -4,7 +4,7 @@
 #include<time.h>
 #include<conio.h>
 
-bool ligne_6(int position_x, int position_y){
+bool ligne_6(int position_x, int position_y, int taille_ligne, int taille_colonne, int grille[taille_ligne][taille_colonne]){
 	if(ligne_haut(position_x, position_y, 6)
 	|| ligne_bas(position_x, position_y, 6)
 	|| ligne_droite(position_x, position_y, 6)

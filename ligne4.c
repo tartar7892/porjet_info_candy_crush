@@ -8,7 +8,7 @@
 #include"ligne4_gauche_dest.c"
 #include"ligne4_droite_dest.c"
 
-bool ligne_4(int position_x, int position_y){
+bool ligne_4(int position_x, int position_y, int taille_ligne, int taille_colonne, int grille[taille_ligne][taille_colonne]){
 	if(ligne_haut(position_x, position_y, 4)){
 		ligne4_haut_dest();
 		return 1;

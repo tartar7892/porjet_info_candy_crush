@@ -1,4 +1,4 @@
-void destruction_croix(int position_x, int position_y){
+void destruction_croix(int position_x, int position_y, int taille_ligne, int taille_colonne, int grille[taille_ligne][taille_colonne]){
 	for(int i=0; i<taille_ligne; i++){
 		if(grille[i][position_y] == grille[position_x][position_y]){
 			grille[i][position_y] = ' ';

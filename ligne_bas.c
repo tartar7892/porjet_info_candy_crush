@@ -1,4 +1,4 @@
-bool ligne_bas(int position_x, int position_y, int longueur){
+bool ligne_bas(int position_x, int position_y, int longueur, int taille_ligne, int taille_colonne, int grille[taille_ligne][taille_colonne]){
 	if(position_x+longueur > taille_ligne){
 		return 0;
 	}

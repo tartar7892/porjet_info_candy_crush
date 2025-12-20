@@ -1,134 +1,108 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "head.h"
+#include <conio.h>
 
 
-
-
-bool ligne_haut(int position_x, int position_y, int longueur){
-	if(position_x-longueur < 0){
-		return 0;
-	}
-	for(int i=1; i<longueur; i++){
-		if(grille[position_x-i][position_y] != grille[position_x][position_y]){
-			return 0;
-		}
-	}
-	return 1;
+bool ligne_haut(int x, int y, int len) {
+    if (grille[x][y] == '#') return 0;
+    if (x - (len - 1) < 0) return 0;
+    for (int i = 1; i < len; i++)
+        if (grille[x - i][y] != grille[x][y]) return 0;
+    return 1;
+}
+bool ligne_bas(int x, int y, int len) {
+    if (grille[x][y] == '#') return 0;
+    if (x + (len - 1) >= TAILLE_LIGNE) return 0;
+    for (int i = 1; i < len; i++)
+        if (grille[x + i][y] != grille[x][y]) return 0;
+    return 1;
 }
 
-bool ligne_gauche(int position_x, int position_y, int longueur){
-	if(position_y-longueur < 0){
-		return 0;
-	}
-	for(int i=1; i<longueur; i++){
-		if(grille[position_x][position_y-i] != grille[position_x][position_y]){
-			return 0;
-		}
-	}
-	return 1;
-}
-bool ligne_droite(int position_x, int position_y, int longueur){
-	if(position_y+longueur > TAILLE_COLONNE){
-		return 0;
-	}
-	for(int i=1; i<longueur; i++){
-		if(grille[position_x][position_y+i] != grille[position_x][position_y]){
-			return 0;
-		}
-	}
-	return 1;
-}
-bool ligne_bas(int position_x, int position_y, int longueur){
-	if(position_x+longueur > TAILLE_LIGNE){
-		return 0;
-	}
-	for(int i=1; i<longueur; i++){
-		if(grille[position_x+i][position_y] != grille[position_x][position_y]){
-			return 0;
-		}
-	}
-	return 1;
+bool ligne_gauche(int x, int y, int len) {
+    if (grille[x][y] == '#') return 0;
+    if (y - (len - 1) < 0) return 0;
+    for (int i = 1; i < len; i++)
+        if (grille[x][y - i] != grille[x][y]) return 0;
+    return 1;
 }
 
-bool ligne6(int position_x, int position_y){
-	if(ligne_haut(position_x, position_y, 6)
-	|| ligne_bas(position_x, position_y, 6)
-	|| ligne_droite(position_x, position_y, 6)
-	|| ligne_gauche(position_x, position_y, 6)){
 
-		ligne6_destruction(position_x, position_y);
-		return 1;
-	}
-	return 0;
+bool ligne_droite(int x, int y, int len) {
+    if (grille[x][y] == '#') return 0;
+    if (y + (len - 1) >= TAILLE_COLONNE) return 0;
+    for (int i = 1; i < len; i++)
+        if (grille[x][y + i] != grille[x][y]) return 0;
+    return 1;
 }
 
-bool ligne4(int position_x, int position_y){
-	if(ligne_haut(position_x, position_y, 4)){
-		destruction_ligne4_haut(position_x, position_y);
-		return 1;
-	}
-	if(ligne_bas(position_x, position_y, 4)){
-		destruction_ligne4_bas(position_x, position_y);
-		return 1;
-	}
-	if(ligne_droite(position_x, position_y, 4)){
-		destruction_ligne4_droite(position_x, position_y);
-		return 1;
-	}
-	if(ligne_gauche(position_x, position_y, 4)){
-		destruction_ligne4_gauche(position_x, position_y);
-		return 1;
-	}
-	return 0;
+bool ligne6(int x, int y) {
+    if (grille[x][y] == '#') return 0;
+
+    if (ligne_haut(x, y, 6) ||
+        ligne_bas(x, y, 6) ||
+        ligne_gauche(x, y, 6) ||
+        ligne_droite(x, y, 6)) {
+        ligne6_destruction(x, y);
+        return 1;
+    }
+    return 0;
 }
-bool carree(int position_x, int position_y){
-	if(position_x+3<TAILLE_LIGNE &&
-	ligne_haut(position_x+3, position_y, 4) &&
-	ligne_haut(position_x, position_y, 4) &&
-	ligne_droite(position_x, position_y+3, 4) &&
-	ligne_droite(position_x, position_y, 4))
-	{
-		return 1;
-	}// carre droite haut
 
-	if(position_x+3<TAILLE_LIGNE &&
-	ligne_bas(position_x-3, position_y, 4) &&
-	ligne_bas(position_x, position_y, 4) &&
-	ligne_droite(position_x, position_y+3, 4) &&
-	ligne_droite(position_x, position_y, 4))
-	{
-		return 1;
-	}//carre droite bas
+bool ligne4(int x, int y) {
+    if (grille[x][y] == '#') return 0;
 
-	if(position_x+3<TAILLE_LIGNE &&
-	ligne_haut(position_x+3, position_y, 4) &&
-	ligne_haut(position_x, position_y, 4) &&
-	ligne_gauche(position_x, position_y-3, 4) &&
-	ligne_gauche(position_x, position_y, 4))
-	{
-		return 1;
-	}//carre haut gauche
+    if (ligne_haut(x, y, 4)) { destruction_ligne4_haut(x, y); return 1; }
+    if (ligne_bas(x, y, 4)) { destruction_ligne4_bas(x, y); return 1; }
+    if (ligne_droite(x, y, 4)) { destruction_ligne4_droite(x, y); return 1; }
+    if (ligne_gauche(x, y, 4)) { destruction_ligne4_gauche(x, y); return 1; }
 
-	if(position_x+3<TAILLE_LIGNE &&
-	ligne_bas(position_x-3, position_y, 4) &&
-	ligne_bas(position_x, position_y, 4) &&
-	ligne_gauche(position_x, position_y-3, 4) &&
-	ligne_gauche(position_x, position_y, 4))
-	{
-		return 1;
-	}//carre bas gauche
+    return 0;
 }
-bool croix(int position_x, int position_y){
-	if(ligne_haut(position_x, position_y, 4) &&
-	ligne_bas(position_x, position_y, 4) &&
-	ligne_droite(position_x, position_y, 4) &&
-	ligne_gauche(position_x, position_y, 4))
-	{
-		destruction_croix(position_x, position_y);
-		return 1;
-	}
-	return 0;
+
+bool carree(int x, int y) {
+    if (grille[x][y] == '#') return 0;
+
+    if (x + 3 < TAILLE_LIGNE &&
+        ligne_haut(x + 3, y, 4) &&
+        ligne_haut(x, y, 4) &&
+        ligne_droite(x, y + 3, 4) &&
+        ligne_droite(x, y, 4))
+        return 1;
+
+    if (x + 3 < TAILLE_LIGNE &&
+        ligne_bas(x - 3, y, 4) &&
+        ligne_bas(x, y, 4) &&
+        ligne_droite(x, y + 3, 4) &&
+        ligne_droite(x, y, 4))
+        return 1;
+
+    if (x + 3 < TAILLE_LIGNE &&
+        ligne_haut(x + 3, y, 4) &&
+        ligne_haut(x, y, 4) &&
+        ligne_gauche(x, y - 3, 4) &&
+        ligne_gauche(x, y, 4))
+        return 1;
+
+    if (x + 3 < TAILLE_LIGNE &&
+        ligne_bas(x - 3, y, 4) &&
+        ligne_bas(x, y, 4) &&
+        ligne_gauche(x, y - 3, 4) &&
+        ligne_gauche(x, y, 4))
+        return 1;
+
+    return 0;
+}
+bool croix(int x, int y) {
+    if (grille[x][y] == '#') return 0;
+
+    if (ligne_haut(x, y, 4) &&
+        ligne_bas(x, y, 4) &&
+        ligne_droite(x, y, 4) &&
+        ligne_gauche(x, y, 4)) {
+        destruction_croix(x, y);
+        return 1;
+    }
+    return 0;
 }

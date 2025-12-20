@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "head.h"
-
-
+#include <conio.h>
 void menu() {
     int choix;
     do {

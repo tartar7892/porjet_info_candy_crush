@@ -21,7 +21,7 @@ bool ligne4(int x, int y);
 bool carree(int x, int y);
 bool croix(int x, int y);
 
-void ligne6_destruction(int x, int y);
+void ligne6_destruction(int x, int y, int dx, int dy);
 void destruction_ligne4_haut(int x, int y);
 void destruction_ligne4_gauche(int x, int y);
 void destruction_ligne4_droite(int x, int y);
@@ -40,7 +40,7 @@ void remplissage(char grille[TAILLE_LIGNE][TAILLE_COLONNE]);
 void initialiser_grille(char grille[TAILLE_LIGNE][TAILLE_COLONNE]);
 void print_colored(char c);
 
-void boucle_curseur(char grille[TAILLE_LIGNE][TAILLE_COLONNE]);
+int boucle_curseur(char grille[TAILLE_LIGNE][TAILLE_COLONNE], int *score,int *curseur_x, int *curseur_y, int *sel_x, int *sel_y);
 
 void perdre_vie(int *vies);
 void afficher(int vies);
@@ -48,8 +48,14 @@ void afficher(int vies);
 void gravite();
 int echanger_positions(char grille[TAILLE_LIGNE][TAILLE_COLONNE],int x1, int y1, int x2, int y2);
 
-void jouer_niveau(int n);
 void afficher_score(int score);
 void mettre_a_jour_score(int *score, int bonbons_detruits);
 
+int interface_niveau(int n, const char *pseudo, int minutes, int secondes, int score, int vies);
+void afficher_interface(int vies, int score, int objectif, int minutes, int secondes);
+void sauvegarder_partie(const char *pseudo, int niveau, int minutes, int secondes, int score, int vies);
+void demander_pseudo(char *pseudo);
+int charger_sauvegarde(const char *pseudo, int *niveau, int *minutes, int *secondes, int *score, int *vies);
+int demander_sauvegarde();
+void attendre_espace(const char *pseudo,int n);
 #endif // HEAD_H_INCLUDED

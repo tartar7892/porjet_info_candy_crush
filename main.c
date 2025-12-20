@@ -4,13 +4,11 @@
 #include "head.h"
 
 char grille[TAILLE_LIGNE][TAILLE_COLONNE];
-int niveau = 1;
+int niveau ;
 
 int main() {
-
     srand(time(NULL));
 
-    jouer_niveau(3);
-
+menu();
     return 0;
 }

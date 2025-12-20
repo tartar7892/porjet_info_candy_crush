@@ -1,0 +1,112 @@
+# depslib dependency file v1.0
+1766249026 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+
+1766250387 d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\head.h
+
+1766248091 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+	<string.h>
+
+1766168696 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\time.c
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	"head.h"
+
+1766247655 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\ligne_visuel.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+
+1766168074 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\utilisateur_initialise_grille.c
+	<stdio.h>
+	<stdlib.h>
+	"head.h"
+
+1766247689 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\destruction.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+
+1766244482 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\temps.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+
+1766236875 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\affichage_grille_vide.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+
+1766237249 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\generateur_grille.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+
+1766246140 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\selection.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+
+1766239648 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\vie.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+
+1766236890 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\echanger.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+
+1766236916 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\gravite.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+
+1766239370 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\jouer_niveau.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+
+1766239017 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\score.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+
+1766250706 source:d:\ece\education\cours\informatique\projet\projet_candy_crush\code\final_codeblock\projet_candy_crush\projet_candy_crush\interface_niveau.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"head.h"
+	<conio.h>
+

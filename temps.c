@@ -23,13 +23,12 @@ int chrono(int *minutes, int *secondes) {
             (*secondes)--;
         }
 
-        printf("\r%02d:%02d", *minutes, *secondes);
-        fflush(stdout);
-    }
+        if (*minutes == 0 && *secondes == 0) {
+            printf("\r00:00\n");
+            printf("Temps ecoule\n");
+        }
 
-    if (*minutes == 0 && *secondes == 0) {
-        printf("\r00:00\n");
-        printf("Temps ecoule\n");
+        return 1;
     }
 
     return 0;

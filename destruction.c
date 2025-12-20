@@ -4,15 +4,9 @@
 #include "head.h"
 #include <conio.h>
 
-void ligne6_destruction(int position_x, int position_y){
-    char rune = grille[position_x][position_y];
-
-    for(int i = 0; i < TAILLE_LIGNE; i++){
-        for(int j = 0; j < TAILLE_COLONNE; j++){
-            if(grille[i][j] == rune){
-                grille[i][j] = ' ';
-            }
-        }
+void ligne6_destruction(int x, int y, int dx, int dy) {
+    for (int k = 0; k < 6; k++) {
+        grille[x + k * dx][y + k * dy] = ' ';
     }
 }
 
@@ -64,7 +58,6 @@ void destruction_croix(int position_x, int position_y){
         }
     }
 }
-
 int detruire_tout(char grille[TAILLE_LIGNE][TAILLE_COLONNE]) {
     int destruction = 0;
 
